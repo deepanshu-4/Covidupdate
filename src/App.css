@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -36,3 +37,51 @@
     transform: rotate(360deg);
   }
 }
+
+.card{
+
+display: flex;
+background-color:lightgray;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+  flex-wrap: wrap;
+  max-width:50%;
+  margin:auto;
+  border-radius: 20%;
+  cursor:pointer;
+
+}
+
+.card li{
+  display: block;
+  list-style: none;
+  padding: 20px;
+  font-weight: bold;
+
+} 
+.card li:nth-child(2) {
+  color:blue;
+}
+
+.card li:nth-child(3) {
+  color: red;
+}
+.card li:nth-child(4) {
+  color:green;
+}
+.card h2{
+color:lightseagreen;
+}
+
+select{
+text-align: center;
+margin:auto;
+display: flex;
+width:50%;
+height:30px;
+font-weight: bold;
+font-size: 1rem;
+color:indigo;
+}
+

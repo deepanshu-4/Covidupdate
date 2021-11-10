@@ -1,25 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import Head from './Header.js';
+import Unique from './Indiv';
+import Dash from './Dashboard';
+import {useState,useEffect} from 'react'
+
+
 
 function App() {
+  const [tocur,settocur]=useState(0);
+  var rows = [];
+  if(tocur==0)
+     for (var i = 0; i < 38; i++) { 
+          rows.push( <Dash ind={i} />);
+        }
+  else{
+    rows.push( <Dash ind={tocur} />);
+
+  }      
+
+function handle(e){
+  settocur(e.target.value)
+  }
+
   return (
+    <>
+    <Head head="Covid19Tracker (India)" />
+    <Unique selectedval={tocur} 
+      onchangeval={handle}
+    />
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    {rows}
     </div>
+    </>
   );
 }
-
 export default App;
